@@ -80,14 +80,8 @@ a {
     height: 40px;
 }
 
-.card:hover{
-    box-shadow: 8px 8px 8px balck;
-    transform:scale(1.2);
-}
-
-.card{
-  border:1px solid black;
-  transition:.3s;
+.small-icon {
+  font-size: 18px;
 }
 
 #right-panel-projects {
@@ -120,6 +114,13 @@ a {
 @media (min-width: 1200px) {
   .right-panel {
       margin-left: 15%;
+  }
+}
+
+@media (max-width: 1200px) {
+  #right-panel-projects {
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 
