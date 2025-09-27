@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Antoine Lacroix - Developer</title>
+        <script src="https://cdn.jsdelivr.net/npm/rot-js@2/dist/rot.js"></script>
+        <script src="game.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        >
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <body class="container" onload="Game.init()">
+        <div class="row">
+            <div class="col-xl-4 pb-3">
+                <h5 class="text-white text-center mt-3">
+                    Antoine Lacroix - Developer
+                </h5>
+                <div id="game-window"></div>
+                <div class="d-flex justify-content-center">
+                    <button
+                        type="button"
+                        class="btn btn-secondary m-1"
+                        id="move_left"
+                        onclick="Game.player.moveLeft()"
+                    >←</button>
+                    <button
+                        type="button"
+                        class="btn btn-secondary m-1"
+                        id="move_up"
+                        onclick="Game.player.moveUp()"
+                    >↑</button>
+                    <button
+                        type="button"
+                        class="btn btn-secondary m-1"
+                        id="move_down"
+                        onclick="Game.player.moveDown()"
+                    >↓</button>
+                    <button
+                        type="button"
+                        class="btn btn-secondary m-1"
+                        id="move_right"
+                        onclick="Game.player.moveRight()"
+                    >→</button>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <div class="right-panel mt-3" id="right-panel-tutorial">
+                    <h3 class="matrix-text" data-text="How to navigate">How to navigate</h3>
+                    <span class="type" style="--n:259">
+                        This resume is heavily inspired by old-school roguelike games, such as Rogue and Angband.
+                        <br>
+                        <br>
+                        Here, your character is represented by the yellow "
+                        <span class="text-warning">@</span>
+                        ".
+                        <br>
+                        <br>
+                        Use the arrows of your keyboard or the on-screen buttons to navigate. Catch the green stars to learn more about me !
+                    </span>
+                </div>
+                <div class="right-panel mt-3 d-none" id="right-panel-story">
+                    <h3 class="matrix-text" data-text="Story">Story</h3>
+                    <span class="type" style="--n:320">
+                        After my baccalauréat, I've decided to attend a DUT in Grenoble, in computer science. When I got my diploma, I quickly realized it was almost impossible to land the jobs I wanted, developer jobs. That's why, after 3 years as a helpdesk technician, I decided to go back to school and attend to Pre-MSc classes in Epitech.
+                    </span>
+                    <br>
+                    <br>
+                    <span class="type" style="--n:247">
+                        On a personnal level, I've been passionated with coding for a long time, I started coding on my calculator when I was 14, I chose a computer science cursus in high school the moment I got the occasion. I also love video games and music in general.
+                    </span>
+                </div>
+                <div class="right-panel mt-3 d-none" id="right-panel-links">
+                    <h3 class="matrix-text" data-text="My links">My links</h3>
+                    <div class="row">
+                        <div class="col">
+                            <img src="assets/profile-pic.png" alt="picture of me" class="rounded-circle">
+                        </div>
+                        <div class="col">
+                            <br>
+                            <a href="https://github.com/Velcatt">
+                                <i class="devicon-github-original text-white"></i>
+                                <span class="type" style="--n:10">My Github</span>
+                            </a>
+                            <br>
+                            <br>
+                            <a href="https://www.linkedin.com/in/antoine-lacroix-976bab1b8/">
+                                <i class="devicon-linkedin-plain colored"></i>
+                                <span class="type" style="--n:11">My Linkedin</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-panel mt-3 d-none" id="right-panel-technologies">
+                    <h3 class="matrix-text" data-text="Hard Skills">Hard Skills</h3>
+                    <div class="row">
+                        <div class="col">
+                            <br>
+                            <i class="devicon-html5-plain colored"></i>
+                            <span class="type" style="--n:5">HTML5</span>
+                            <br>
+                            <br>
+                            <i class="devicon-css3-plain colored"></i>
+                            <span class="type" style="--n:4">CSS3</span>
+                            <br>
+                            <br>
+                            <i class="devicon-javascript-plain colored"></i>
+                            <span class="type" style="--n:10">JavaScript</span>
+                            <br>
+                            <br>
+                            <i class="devicon-bootstrap-plain colored"></i>
+                            <span class="type" style="--n:9">Bootstrap</span>
+                        </div>
+                        <div class="col">
+                            <br>
+                            <i class="devicon-c-original colored"></i>
+                            <span class="type" style="--n:1">C</span>
+                            <br>
+                            <br>
+                            <i class="devicon-cplusplus-plain colored"></i>
+                            <span class="type" style="--n:3">C++</span>
+                            <br>
+                            <br>
+                            <i class="devicon-java-plain colored"></i>
+                            <span class="type" style="--n:4">Java</span>
+                            <br>
+                            <br>
+                            <i class="devicon-python-plain colored"></i>
+                            <span class="type" style="--n:6">Python</span>
+                        </div>
+                        <div class="col">
+                            <br>
+                            <i class="devicon-postgresql-plain colored"></i>
+                            <span class="type" style="--n:10">PostgreSQL</span>
+                            <br>
+                            <br>
+                            <i class="devicon-mysql-original colored"></i>
+                            <span class="type" style="--n:5">MySQL</span>
+                            <br>
+                            <br>
+                            <i class="devicon-flutter-plain colored"></i>
+                            <span class="type" style="--n:7">Flutter</span>
+                            <br>
+                            <br>
+                            <i class="devicon-bash-plain text-white"></i>
+                            <span class="type" style="--n:6">Bash</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-panel mt-3 d-none" id="right-panel-experiences">
+                    <h3 class="matrix-text" data-text="Work experience">Work experience</h3>
+                    <span class="type" style="--n:57">
+                        2023 - 2025 : Helpdesk Technician at LME (34160 Castries)
+                    </span>
+                    <br>
+                    <br>
+                    <span class="type" style="--n:94">
+                        2023 : Soundtrack Producer for the game "Just Hoop!", for Realcast (92130 Issy-les-Moulineaux)
+                    </span>
+                    <br>
+                    <br>
+                    <span class="type" style="--n:51">
+                        2021 : IT Asset Manager at ISEM (34090 Montpellier)
+                    </span>
+                    <br>
+                    <br>
+                    <span class="type" style="--n:89">
+                        2020 : 10 week long internship as a web developer at the CTP (38400 Saint-Martin-d'Hères)
+                    </span>
+                </div>
+                <div class="right-panel mt-3 d-none" id="right-panel-education">
+                    <h3 class="matrix-text" data-text="Education">Education</h3>
+                    <span class="type" style="--n:67">
+                        2025 - ongoing : Pre-MSc at Epitech Montpellier (34000 Montpellier)
+                    </span>
+                    <br>
+                    <br>
+                    <span class="type" style="--n:60">
+                        2018 - 2020 : DUT in computer science, IUT2 (38000 Grenoble)
+                    </span>
+                    <br>
+                    <br>
+                    <span class="type" style="--n:100">
+                        2016 : Scientific Baccalauréat, Very Good mention at Lycée Georges Pompidou (34170 Castelnau-le-Lez)
+                    </span>
+                </div>
+                <div class="right-panel mt-3 d-none" id="right-panel-soft-skills">
+                    <h3 class="matrix-text" data-text="Soft Skills">Soft Skills</h3>
+                    <div class="row">
+                        <div class="col">
+                            <span class="type" style="--n:8">
+                                Sociable
+                            </span>
+                            <br>
+                            <br>
+                            <span class="type" style="--n:7">
+                                Curious
+                            </span>
+                            <br>
+                            <br>
+                            <span class="type" style="--n:8">
+                                Punctual
+                            </span>
+                        </div>
+                        <div class="col">
+                            <span class="type" style="--n:7">
+                                Serious
+                            </span>
+                            <br>
+                            <br>
+                            <span class="type" style="--n:9">
+                                Team work
+                            </span>
+                            <br>
+                            <br>
+                            <span class="type" style="--n:37">
+                                Languages spoken : french and english
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-panel mb-3 d-none" id="right-panel-projects">
+                    <h3 class="matrix-text" data-text="Projects">Projects</h3>
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <div class="card bg-dark" style="width: auto;">
+                                <img src="assets/romiguiere.png" class="card-img-top" alt="Aux amis de la Romiguière">
+                                <div class="card-body">
+                                    <h5 class="card-title text-secondary">Aux amis de la Romiguière</h5>
+                                    <p class="card-text text-white">Media archive website made for a small village in Aveyron, France</p>
+                                    <a href="https://www.auxamisdelaromiguiere.net" class="btn btn-secondary">Go to website</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="card bg-dark" style="width: auto;">
+                                <img src="assets/weatherapp.png" class="card-img-top" alt="weatherapp">
+                                <div class="card-body">
+                                    <h5 class="card-title text-secondary">WeatherApp</h5>
+                                    <p class="card-text text-white">An app to get data on the past weather, made in Flutter and based on Open-Meteo.com API</p>
+                                    <a href="https://github.com/Velcatt/weatherapp" class="btn btn-secondary">Go to Github page</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="card bg-dark" style="width: auto;">
+                                <img src="assets/hangman.png" class="card-img-top" alt="Hangman">
+                                <div class="card-body">
+                                    <h5 class="card-title text-secondary">Hangman</h5>
+                                    <p class="card-text text-white">A hangman game made to train in Python</p>
+                                    <a href="https://github.com/Velcatt/Hangman_V2" class="btn btn-secondary">Go to Github page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="bottom-panel mt-3">
+                <h3 class="matrix-text" data-text="Contact">Contact</h3>
+                <button
+                    class="btn btn-secondary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseForm"
+                    aria-expanded="false"
+                    aria-controls="collapseForm"
+                >
+                    Open form
+                </button>
+                <div class="collapse" id="collapseForm">
+                    <form action="formHandler.php">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label class="text-white form-label" for="fname">First name</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="fname"
+                                    required
+                                >
+                            </div>
+                            <div class="col">
+                                <label class="text-white form-label" for="lname">Last name</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="lname"
+                                    required
+                                >
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-white form-label" for="mail">Your email address</label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="mail"
+                                required
+                            >
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea
+                                class="form-control"
+                                placeholder="Send me something..."
+                                id="floatingTextarea"
+                                style="height: 100px"
+                            ></textarea>
+                            <label for="floatingTextarea">Your message</label>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-secondary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+    <br>
+    <br>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
