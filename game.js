@@ -316,5 +316,7 @@ window.addEventListener("keydown", function(e) {
     }
 }, false);
 
-Game.init();
+
+window.onload = function(){Game.init();};
+
 

@@ -84,6 +84,12 @@ a {
   font-size: 18px;
 }
 
+.move-button {
+  font-size: 40px;
+  width: 80px;
+  height : 80px;
+}
+
 #right-panel-projects {
   padding-left: 2%;
   padding-right: 2%;
