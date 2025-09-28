@@ -3,11 +3,16 @@
     src: url('Alloy.ttf');
 }
 
+html {
+  height: 100%;
+}
+
 body {
     font-family: Alloy;
     background-image: url(assets/circuit-wallpaper-darker.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
 }
 
 i {
