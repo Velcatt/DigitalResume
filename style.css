@@ -10,7 +10,7 @@ html {
 body {
     font-family: Alloy;
     background-image: url(assets/circuit-wallpaper-darker.jpg);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     height: 100%;
 }
