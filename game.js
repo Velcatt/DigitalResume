@@ -308,13 +308,9 @@ Player.prototype.act = function() {
 Player.prototype.handleEvent = function(e) {
     var keyMap = {};
     keyMap[38] = 0;
-    keyMap[33] = 1;
     keyMap[39] = 2;
-    keyMap[34] = 3;
     keyMap[40] = 4;
-    keyMap[35] = 5;
     keyMap[37] = 6;
-    keyMap[36] = 7;
 
     var code = e.keyCode;
     // one of numpad directions? 
@@ -326,13 +322,11 @@ Player.prototype.handleEvent = function(e) {
     var newY = this.y + dir[1];
     var newKey = newX + "," + newY;
     if (!(newKey in Game.map)) { return; }
-    Game.display.draw(this.x, this.y, Game.map[this.x+","+this.y]);
-    this.x = newX;
-    this.y = newY;
-    this.draw();
-    window.removeEventListener("keydown", this);
-    Game.engine.unlock();
-    this.checkBox();
+    if (code == 37) {this.moveLeft();}
+    if (code == 38) {this.moveUp();}
+    if (code == 39) {this.moveRight();}
+    if (code == 40) {this.moveDown();}
+
 }
 
 window.addEventListener("keydown", function(e) {
