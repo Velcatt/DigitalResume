@@ -32,6 +32,7 @@ var Game = {
     softskills: null,
     projects: null,
     general: null,
+    passions: null,
     
     init: function() {
         this.display = new ROT.Display(options);
@@ -64,7 +65,7 @@ var Game = {
     },
     
     _createPlayer: function(freeCells) {
-        var index = 145;
+        var index = 143;
         var key = freeCells.splice(index, 1)[0];
         var parts = key.split(",");
         var x = parseInt(parts[0]);
@@ -112,6 +113,11 @@ var Game = {
         key = freeCells.splice(index, 1)[0];
         this.map[key] = "*";
         this.general = key;
+
+        index = 54;
+        key = freeCells.splice(index, 1)[0];
+        this.map[key] = "*";
+        this.passions = key;
     },
     
     _drawWholeMap: function() {
@@ -199,6 +205,7 @@ class Player {
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
             document.getElementById("right-panel-general").classList.add("d-none");
+            document.getElementById("right-panel-passions").classList.add("d-none");
         } else if (key == Game.links){
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.remove("d-none");
@@ -209,6 +216,7 @@ class Player {
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
             document.getElementById("right-panel-general").classList.add("d-none");
+            document.getElementById("right-panel-passions").classList.add("d-none");
         } else if (key == Game.technologies) {
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.add("d-none");
@@ -219,6 +227,7 @@ class Player {
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
             document.getElementById("right-panel-general").classList.add("d-none");
+            document.getElementById("right-panel-passions").classList.add("d-none");
         } else if (key == Game.experiences) {
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.add("d-none");
@@ -229,6 +238,7 @@ class Player {
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
             document.getElementById("right-panel-general").classList.add("d-none");
+            document.getElementById("right-panel-passions").classList.add("d-none");
         } else if (key == Game.education) {
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.add("d-none");
@@ -239,6 +249,7 @@ class Player {
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
             document.getElementById("right-panel-general").classList.add("d-none");
+            document.getElementById("right-panel-passions").classList.add("d-none");
         } else if (key == Game.softskills) {
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.add("d-none");
@@ -249,6 +260,7 @@ class Player {
             document.getElementById("right-panel-soft-skills").classList.remove("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
             document.getElementById("right-panel-general").classList.add("d-none");
+            document.getElementById("right-panel-passions").classList.add("d-none");
         } else if (key == Game.projects) {
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.add("d-none");
@@ -259,6 +271,7 @@ class Player {
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.remove("d-none");
             document.getElementById("right-panel-general").classList.add("d-none");
+            document.getElementById("right-panel-passions").classList.add("d-none");
         } else if (key == Game.general) {
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.add("d-none");
@@ -269,6 +282,18 @@ class Player {
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
             document.getElementById("right-panel-general").classList.remove("d-none");
+            document.getElementById("right-panel-passions").classList.add("d-none");
+        } else if (key == Game.passions) {
+            document.getElementById("right-panel-tutorial").classList.add("d-none");
+            document.getElementById("right-panel-links").classList.add("d-none");
+            document.getElementById("right-panel-story").classList.add("d-none");
+            document.getElementById("right-panel-technologies").classList.add("d-none");
+            document.getElementById("right-panel-experiences").classList.add("d-none");
+            document.getElementById("right-panel-education").classList.add("d-none");
+            document.getElementById("right-panel-soft-skills").classList.add("d-none");
+            document.getElementById("right-panel-projects").classList.add("d-none");
+            document.getElementById("right-panel-general").classList.add("d-none");
+            document.getElementById("right-panel-passions").classList.remove("d-none");
         } else {
             return;
         }

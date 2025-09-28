@@ -95,6 +95,23 @@ a {
   height : 80px;
 }
 
+#card1 {
+  animation: fadein;
+  animation-duration: 1s;
+}
+
+#card2 {
+  animation: fadein;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+}
+
+#card3 {
+  animation: fadein;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+
 #right-panel-projects {
   padding-left: 2%;
   padding-right: 2%;
@@ -119,6 +136,20 @@ a {
   66% {
     clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
     transform: translate(5px, 5px);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    filter: blur(0);
+  }
+
+  50% {
+    filter: blur(10px);
+  }
+
+  100% {
+    filter: blur(0);
   }
 }
 
