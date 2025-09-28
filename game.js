@@ -31,6 +31,7 @@ var Game = {
     education: null,
     softskills: null,
     projects: null,
+    general: null,
     
     init: function() {
         this.display = new ROT.Display(options);
@@ -106,6 +107,11 @@ var Game = {
         key = freeCells.splice(index, 1)[0];
         this.map[key] = "*";
         this.projects = key;
+
+        index = 140;
+        key = freeCells.splice(index, 1)[0];
+        this.map[key] = "*";
+        this.general = key;
     },
     
     _drawWholeMap: function() {
@@ -192,6 +198,7 @@ class Player {
             document.getElementById("right-panel-education").classList.add("d-none");
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
+            document.getElementById("right-panel-general").classList.add("d-none");
         } else if (key == Game.links){
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.remove("d-none");
@@ -201,6 +208,7 @@ class Player {
             document.getElementById("right-panel-education").classList.add("d-none");
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
+            document.getElementById("right-panel-general").classList.add("d-none");
         } else if (key == Game.technologies) {
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.add("d-none");
@@ -210,6 +218,7 @@ class Player {
             document.getElementById("right-panel-education").classList.add("d-none");
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
+            document.getElementById("right-panel-general").classList.add("d-none");
         } else if (key == Game.experiences) {
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.add("d-none");
@@ -219,6 +228,7 @@ class Player {
             document.getElementById("right-panel-education").classList.add("d-none");
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
+            document.getElementById("right-panel-general").classList.add("d-none");
         } else if (key == Game.education) {
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.add("d-none");
@@ -228,6 +238,7 @@ class Player {
             document.getElementById("right-panel-education").classList.remove("d-none");
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
+            document.getElementById("right-panel-general").classList.add("d-none");
         } else if (key == Game.softskills) {
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.add("d-none");
@@ -237,6 +248,7 @@ class Player {
             document.getElementById("right-panel-education").classList.add("d-none");
             document.getElementById("right-panel-soft-skills").classList.remove("d-none");
             document.getElementById("right-panel-projects").classList.add("d-none");
+            document.getElementById("right-panel-general").classList.add("d-none");
         } else if (key == Game.projects) {
             document.getElementById("right-panel-tutorial").classList.add("d-none");
             document.getElementById("right-panel-links").classList.add("d-none");
@@ -246,6 +258,17 @@ class Player {
             document.getElementById("right-panel-education").classList.add("d-none");
             document.getElementById("right-panel-soft-skills").classList.add("d-none");
             document.getElementById("right-panel-projects").classList.remove("d-none");
+            document.getElementById("right-panel-general").classList.add("d-none");
+        } else if (key == Game.general) {
+            document.getElementById("right-panel-tutorial").classList.add("d-none");
+            document.getElementById("right-panel-links").classList.add("d-none");
+            document.getElementById("right-panel-story").classList.add("d-none");
+            document.getElementById("right-panel-technologies").classList.add("d-none");
+            document.getElementById("right-panel-experiences").classList.add("d-none");
+            document.getElementById("right-panel-education").classList.add("d-none");
+            document.getElementById("right-panel-soft-skills").classList.add("d-none");
+            document.getElementById("right-panel-projects").classList.add("d-none");
+            document.getElementById("right-panel-general").classList.remove("d-none");
         } else {
             return;
         }

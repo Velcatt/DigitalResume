@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Antoine Lacroix - Developer</title>
         <script src="https://cdn.jsdelivr.net/npm/rot-js@2/dist/rot.js"></script>
@@ -13,6 +13,30 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
         <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                // https://dashboard.emailjs.com/admin/account
+                emailjs.init({
+                publicKey: "LnyISf0S3vV8MWyAU",
+                });
+            })();
+        </script>
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // these IDs from the previous steps
+                    emailjs.sendForm('contact_service', 'contact_form', this)
+                        .then(() => {
+                            console.log('SUCCESS!');
+                        }, (error) => {
+                            console.log('FAILED...', error);
+                        });
+                });
+            }
+        </script>
     </head>
     <body class="container" onload="Game.init()">
         <div class="row">
@@ -223,7 +247,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="right-panel mb-3 d-none" id="right-panel-projects">
+                <div class="right-panel mt-3 d-none" id="right-panel-projects">
                     <h3 class="matrix-text" data-text="Projects">Projects</h3>
                     <div class="row">
                         <div class="col-xl-4">
@@ -267,86 +291,119 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="bottom-panel mt-3">
-                <h3 class="matrix-text" data-text="Contact">Contact</h3>
-                <button
-                    class="btn btn-secondary"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseForm"
-                    aria-expanded="false"
-                    aria-controls="collapseForm"
-                >
-                    Open form
-                </button>
-                <div class="collapse" id="collapseForm">
-                    <form action="formHandler.php">
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label class="text-white form-label" for="fname">First name</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="fname"
-                                    required
-                                >
-                            </div>
-                            <div class="col">
-                                <label class="text-white form-label" for="lname">Last name</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="lname"
-                                    required
-                                >
-                            </div>
+                <div class="right-panel mt-3 d-none" id="right-panel-general">
+                    <h3 class="matrix-text" data-text="General Informations">General Informations</h3>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <img src="assets/profile-pic.png" class="rounded-circle" alt="Picture of me">
                         </div>
-                        <div class="mb-3">
-                            <label class="text-white form-label" for="mail">Your email address</label>
-                            <input
-                                type="email"
-                                class="form-control"
-                                id="mail"
-                                required
-                            >
+                        <div class="col-sm-7">
+                            <span class="type" style="--n:22">Name : Antoine Lacroix</span>
+                            <br>
+                            <br>
+                            <span class="type" style="--n:8">Age : 26</span>
+                            <br>
+                            <br>
+                            <span class="type" style="--n:18">Tel : +33643557931</span>
+                            <br>
+                            <br>
+                            <span class="type" style="--n:33">Mail : antoine.lacroix@epitech.eu</span>
                         </div>
-                        <div class="form-floating mb-3">
-                            <textarea
-                                class="form-control"
-                                placeholder="Send me something..."
-                                id="floatingTextarea"
-                                style="height: 100px"
-                            ></textarea>
-                            <label for="floatingTextarea">Your message</label>
-                        </div>
-                        <div class="mb-3">
-                            <button type="submit" class="btn btn-secondary">Submit</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
         </div>
-    </div>
-    <br>
-    <br>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+        <div class="row">
+            <div class="col">
+                <div class="bottom-panel mt-3">
+                    <h3 class="matrix-text" data-text="Contact">Contact</h3>
+                    <button
+                        class="btn btn-secondary"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseForm"
+                        aria-expanded="false"
+                        aria-controls="collapseForm"
+                    >
+                        Open form
+                    </button>
+                    <div class="collapse" id="collapseForm">
+                        <form id="contact-form">
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label class="text-white form-label" for="fname">First name</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="fname"
+                                        name="fname"
+                                        required
+                                    >
+                                </div>
+                                <div class="col">
+                                    <label class="text-white form-label" for="lname">Last name</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="lname"
+                                        name="lname"
+                                        required
+                                    >
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="text-white form-label" for="email">Your email address</label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    name="email"
+                                    required
+                                >
+                            </div>
+                            <div class="mb-3">
+                                <label class="text-white form-label" for="title">Subject</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="title"
+                                    name="title"
+                                    required
+                                >
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea
+                                    class="form-control"
+                                    placeholder="Send me something..."
+                                    id="message"
+                                    name="message"
+                                    style="height: 100px"
+                                ></textarea>
+                                <label for="message">Your message</label>
+                            </div>
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-secondary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <br>
+        <br>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
 </html>
