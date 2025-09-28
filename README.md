@@ -2,7 +2,7 @@
 
 This is my digital resume, heavily inspired by ASCII Roguelikes such as Rogue, Angband and Cogmind.
 
-## How to access
+## How to access the website
 
 You can access it at this url :
 
