@@ -21,21 +21,8 @@
                 emailjs.init({
                 publicKey: "LnyISf0S3vV8MWyAU",
                 });
+                window.alert("init done");
             })();
-        </script>
-        <script type="text/javascript">
-            window.onload = function() {
-                document.getElementById('contact-form').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    // these IDs from the previous steps
-                    emailjs.sendForm('contact_service', 'contact_form', this)
-                        .then(() => {
-                            console.log('SUCCESS!');
-                        }, (error) => {
-                            console.log('FAILED...', error);
-                        });
-                });
-            }
         </script>
     </head>
     <body class="container" onload="Game.init()">
@@ -382,7 +369,7 @@
                                 <label for="message">Your message</label>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-secondary">Submit</button>
+                                <input type="submit" value="Send" class="btn btn-secondary">
                             </div>
                         </form>
                     </div>
@@ -404,6 +391,20 @@
         </div>
         <br>
         <br>
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // these IDs from the previous steps
+                    emailjs.sendForm('service_rtilk3o', 'template_13f964o', this)
+                        .then(() => {
+                            window.alert('Your message has been sent !');
+                        }, (error) => {
+                            window.alert('There has been an error... Try to contact me directly on antoine.lacroix@epitech.eu');
+                        });
+                });
+            }
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </body>
 </html>
